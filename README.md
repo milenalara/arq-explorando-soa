@@ -1,1 +1,1 @@
-# arq-explorando-soa
+# Arquitetura de Software: Explorando Arquitetura SOA
