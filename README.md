@@ -11,6 +11,14 @@ App mobile, plataforma web.
 **Quais dados ou sistemas acessa:**  
 Sistema de registro de ativos, base de ativos disponíveis, dados de saldo e perfil do cliente.
 
+![image](https://github.com/user-attachments/assets/c2c0e5a5-3239-4598-94a3-24fb47ad9767)
+
+Consumido por: App Mobile, Plataforma Web
+
+Acessa: Registro de ativos, base ativos financeiros, saldo e dados do cliente
+
+Objetivo: Negociar ativos(CDB, FIIs etc)
+
 ---
 
 ## 2. Serviço de Controle de Saldo
