@@ -66,3 +66,14 @@ Serviço de pagamento com cartão, serviço de saque, app mobile.
 
 **Quais dados ou sistemas acessa:**  
 Sistema de eventos, push notifications, email/SMS.
+
+![image](https://github.com/user-attachments/assets/b3be652b-976a-4a64-a639-8842e1752fde)
+
+
+Consumido por: Qualquer serviço que gere evento (ex: saque, compra, investimento)
+
+Acessa: Sistemas de envio de mensagens (push/email/SMS)
+
+Objetivo: Enviar alertas e confirmações para o cliente
+
+
