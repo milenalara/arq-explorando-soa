@@ -40,10 +40,19 @@ Banco de dados transacional, sistema contábil.
 Avaliar o perfil de risco do cliente com base em dados financeiros e de comportamento.
 
 **Quem consome:**  
-App mobile, parceiros fintechs, módulo de empréstimo.
+App mobile, Web e módulo de empréstimo.
 
 **Quais dados ou sistemas acessa:**  
 Score externo (Serasa/Boa Vista), histórico de transações, cadastro do cliente.
+
+![image](https://github.com/user-attachments/assets/13b01791-a9ec-4fe7-81f0-5ee487bc657c)
+
+Consumido por: App/Web, módulo de empréstimos
+
+Acessa: Score externo, histórico de gastos, dados cadastrais
+
+Objetivo: Avaliar perfil de risco do cliente
+
 
 ---
 
