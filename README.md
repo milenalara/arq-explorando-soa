@@ -1,5 +1,40 @@
 # Serviços - Arquitetura SOA
 
+# 1. Processo de Investimento em Títulos com Juros Pré-Fixados
+
+## Objetivo
+Permitir que o cliente realize a compra de títulos com rendimento pré-fixado, garantindo validações automáticas e comunicação com o sistema de registro de ativos.
+
+## Quem consome
+App mobile e plataforma web.
+
+## Serviços utilizados e justificativas
+
+### Consulta de Ativos Pré-Fixados
+
+Filtra e exibe apenas os títulos com taxa de juros conhecida no momento da compra. Reutilizável em processos de recomendação e simulações financeiras. Executável via REST API, com granularidade baixa e alta autonomia.
+
+### Validação de Perfil do Cliente
+Verifica se o perfil de investidor do cliente (ex: conservador, moderado) é compatível com o ativo. Reutilizável em outros processos como recomendação de carteira e onboarding. Serviço técnico com decisão pontual.
+
+### Validação de Saldo
+Confirma se o cliente possui saldo suficiente. Serviço reutilizável em transações financeiras diversas. Executável automaticamente via API, granularidade baixa.
+
+### Registro da Ordem de Compra
+Formaliza a compra com o sistema de custódia de ativos. Serviço técnico clássico de SOA, interoperável, com escopo bem definido.
+
+### Atualização de Saldo
+Deduz valor da compra do saldo do cliente. Reutilizável em vários processos (pagamento, saque, crédito). Executável via REST.
+
+### Notificações
+Informa o cliente sobre a conclusão da compra. Reutilizável em diversas operações. Pode ser disparado por push, e-mail ou SMS.
+
+## Dados ou sistemas acessados:
+
+- Sistema de registro de ativos
+- Base de dados de ativos disponíveis (filtrados por tipo pré-fixado)
+- Dados de saldo e perfil do cliente
+
 # 3. Processo de Saque de Dinheiro
 
 ## Objetivo
