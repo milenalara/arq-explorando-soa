@@ -149,3 +149,78 @@ Permitir que o cliente realize o saque de valores de sua conta para dinheiro fí
 
 ![alt text](image.png)
 ---
+
+## 4. Processo de Solicitação de Empréstimo
+### 4.1. Objetivo
+Permitir que o cliente solicite um empréstimo pessoal de forma digital, com validações automáticas de perfil, análise de crédito, condições contratuais e liberação dos valores.
+
+### 4.2. Quem consome
+App mobile
+
+Plataforma web
+
+APIs de parceiros (ex: marketplaces financeiros)
+
+### 4.3. Serviços utilizados e justificativas
+#### 4.3.1. Consulta de Ofertas de Empréstimo
+Justificativa: Lista as opções de empréstimo disponíveis para o cliente, considerando perfil, limites e regras de crédito.
+
+Características: Serviço reutilizável em simulações, marketplaces e pré-ofertas. Executável via REST API, granularidade baixa e alta autonomia.
+
+#### 4.3.2. Validação de Perfil do Cliente
+Justificativa: Verifica se o cliente atende aos critérios básicos (ex.: idade, renda mínima, restrições cadastrais).
+
+Características: Serviço técnico, utilizado também em outros fluxos como onboarding e concessão de crédito.
+
+#### 4.3.3. Análise de Crédito
+Justificativa: Avalia score, histórico financeiro, capacidade de pagamento e risco de inadimplência.
+
+Características: Serviço especializado, conectado a bureaus de crédito e análise interna. Pode ser síncrono (instantâneo) ou assíncrono, dependendo da política.
+
+#### 4.3.4. Simulação de Condições
+Justificativa: Permite ao cliente visualizar prazos, taxas, parcelas e custo efetivo total (CET) antes da contratação.
+
+Características: Serviço técnico reutilizável em canais diversos, com regras de negócio configuráveis.
+
+#### 4.3.5. Formalização do Contrato
+Justificativa: Gera o contrato digital, coleta aceite eletrônico e registra juridicamente a operação.
+
+Características: Serviço com integração a módulos de assinatura digital e compliance. Interoperável via REST ou SOAP.
+
+#### 4.3.6. Liberação dos Recursos
+Justificativa: Efetiva o crédito na conta do cliente após a formalização.
+
+Características: Serviço técnico que se comunica com o core bancário. Altamente reutilizável em processos de crédito.
+
+#### 4.3.7. Atualização de Saldo
+Justificativa: Credita o valor aprovado na conta do cliente.
+
+Características: Serviço compartilhado com outros processos financeiros (investimento, saque, pagamentos).
+
+#### 4.3.8. Notificações
+Justificativa: Informa ao cliente sobre cada etapa (aprovação, formalização, liberação do crédito).
+
+Características: Serviço utilizado em diversos processos. Pode atuar via push, e-mail e SMS.
+
+### 4.4. Dados ou sistemas acessados
+Bureau de crédito (Serasa, SPC, etc.)
+
+Sistema de cadastro de clientes
+
+Sistema de risco e score interno
+
+Core bancário (para saldo e movimentações)
+
+Sistema de assinatura eletrônica
+
+Sistema de notificações
+
+### 4.5. Explicação
+Critério	Aplicação no Processo de Solicitação de Empréstimo
+Escopo	Macroscópico – envolve várias etapas (consulta, validação, análise, formalização, liberação).
+Granularidade	Alta – processo completo, desde simulação até a liberação dos valores.
+Reutilização	Baixa no processo como um todo, mas alta nos serviços técnicos (análise de crédito, notificações).
+Composição	Composto por tarefas técnicas (consulta, análise, contrato, crédito) e decisões de negócio.
+Tecnologia	Independente – modelagem BPMN, APIs (REST/SOAP), integração com parceiros e sistemas externos.
+Interface	Interface de processo – consumido por app, web e APIs de parceiros financeiros.
+Autonomia Técnica	Baixa – exige composição de múltiplos serviços autônomos.
