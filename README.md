@@ -155,11 +155,9 @@ Permitir que o cliente realize o saque de valores de sua conta para dinheiro fí
 Permitir que o cliente solicite um empréstimo pessoal de forma digital, com validações automáticas de perfil, análise de crédito, condições contratuais e liberação dos valores.
 
 ### 4.2. Quem consome
-App mobile
-
-Plataforma web
-
-APIs de parceiros (ex: marketplaces financeiros)
+- App mobile
+- Plataforma web
+- APIs de parceiros (ex: marketplaces financeiros)
 
 ### 4.3. Serviços utilizados e justificativas
 #### 4.3.1. Consulta de Ofertas de Empréstimo
@@ -203,17 +201,12 @@ Justificativa: Informa ao cliente sobre cada etapa (aprovação, formalização,
 Características: Serviço utilizado em diversos processos. Pode atuar via push, e-mail e SMS.
 
 ### 4.4. Dados ou sistemas acessados
-Bureau de crédito (Serasa, SPC, etc.)
-
-Sistema de cadastro de clientes
-
-Sistema de risco e score interno
-
-Core bancário (para saldo e movimentações)
-
-Sistema de assinatura eletrônica
-
-Sistema de notificações
+- Bureau de crédito (Serasa, SPC, etc.)
+- Sistema de cadastro de clientes
+- Sistema de risco e score interno
+- Core bancário (para saldo e movimentações)
+- Sistema de assinatura eletrônica
+- Sistema de notificações
 
 ### 4.5. Explicação
 | **Critério**          | **Aplicação no Processo de Solicitação de Empréstimo**                                             |
@@ -226,7 +219,7 @@ Sistema de notificações
 | **Interface**         | Interface de processo – consumido por app, web e APIs de parceiros financeiros.                    |
 | **Autonomia Técnica** | Baixa – exige composição de múltiplos serviços autônomos.                                          |
 
-
+![Processo de Solicitação de Empréstimo](image-3.png)
 
 ## 5. Processo de Controle de Saldo
 ### 5.1. Objetivo
