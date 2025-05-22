@@ -35,38 +35,64 @@ Informa o cliente sobre a conclusão da compra. Reutilizável em diversas opera�
 - Base de dados de ativos disponíveis (filtrados por tipo pré-fixado)
 - Dados de saldo e perfil do cliente
 
+### 1.5. Explicação
+
+| Critério              | Aplicação no Processo de Investimento em Títulos com Juros Pré-Fixados               |
+|-----------------------|----------------------------------------------------------------------------------------|
+| Escopo                | Macroscópico – envolve diversas ações (consulta, validação, registro, notificação).   |
+| Granularidade         | Alta – processo completo com várias etapas e decisões.                                |
+| Reutilização          | Baixa no processo como um todo, mas alta nos serviços técnicos reutilizáveis.         |
+| Composição            | Composto por tarefas técnicas (consultar ativos, registrar ordem) e decisões (validar saldo, confirmar operação). |
+| Tecnologia            | Independente – pode ser descrito por BPMN, integrado a sistemas externos.             |
+| Interface             | Interface de processo – fluxos BPMN, regras de negócio, integração com app/web.       |
+| Autonomia Técnica     | Baixa – depende da orquestração de múltiplos serviços autônomos.                      |
+
+
 ## 2. Processo de Investimento em Títulos com Juros Pós-Fixados
 
 ### 2.1. Objetivo
 Permitir que o cliente invista em ativos com rendimento atrelado a um indicador variável (ex: CDI), com validações específicas e comunicação com sistema de registro de ativos.
 
-### 2.3. Quem consome
+### 2.2. Quem consome
 App mobile e plataforma web.
 
-### 2.4. Serviços utilizados e justificativas
+### 2.3. Serviços utilizados e justificativas
 
-#### 2.4.1. Consulta de Ativos Pós-Fixados
+#### 2.3.1. Consulta de Ativos Pós-Fixados
 Lista apenas os ativos vinculados a taxas variáveis. Utilizável também por sistemas de simulação de rendimento ou alertas de variação. Executável por API com granularidade baixa.
 
-#### 2.4.2 Validação de Perfil do Cliente
+#### 2.3.2 Validação de Perfil do Cliente
 Verifica se o cliente está apto a investir em produtos de renda variável ou indexados. Técnica pontual, reutilizável em outros fluxos.
 
-#### 2.4.3 Validação de Saldo
+#### 2.3.3 Validação de Saldo
 Confere disponibilidade de saldo. Reutilizável. Executável de forma autônoma.
 
-#### 2.4.4. Registro da Ordem de Compra
+#### 2.3.4. Registro da Ordem de Compra
 Formaliza a operação com sistema de registro de ativos. Interoperável e independente de plataforma (ex: REST, SOAP).
 
-#### 2.4.5. Atualização de Saldo
+#### 2.3.5. Atualização de Saldo
 Atualiza o saldo do cliente após o investimento. Usado em vários fluxos.
 
-#### 2.4.6. Notificações
+#### 2.3.6. Notificações
 Informa o sucesso da operação. Reutilizável. Integra com múltiplos canais.
 
-#### 2.5. Dados ou sistemas acessados
+### 2.4. Dados ou sistemas acessados
 - Sistema de registro de ativos
 -  Base de dados de ativos disponíveis (filtrados por tipo pós-fixado)
 - Dados de saldo e perfil do cliente
+
+### 2.5. Explicação
+
+| Critério              | Aplicação no Processo de Investimento em Títulos com Juros Pós-Fixados               |
+|-----------------------|----------------------------------------------------------------------------------------|
+| Escopo                | Macroscópico – cobre etapas do investimento com atualização de rendimento variável.   |
+| Granularidade         | Alta – envolve múltiplas etapas e cálculos pós-negociação.                            |
+| Reutilização          | Baixa no processo como um todo, mas os serviços são altamente reutilizáveis.          |
+| Composição            | Composto por tarefas (consulta, validação, cálculo de rendimento) e decisões.         |
+| Tecnologia            | Independente – abstração do fluxo, com uso de serviços técnicos via API (REST, etc). |
+| Interface             | Interface de processo – modelagem BPMN, consumo por canais digitais.                  |
+| Autonomia Técnica     | Baixa – o processo depende da composição de serviços autônomos, como cálculo pós-fixado. |
+
 
 ## 3. Processo de Saque de Dinheiro
 
