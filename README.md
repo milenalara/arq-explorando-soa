@@ -298,3 +298,5 @@ Sistema de notificações
 | **Autonomia Técnica**| Baixa – depende da orquestração de múltiplos serviços autônomos. |
 
 
+
+![Processo de Controle de Saldo](diagram-5.png)
