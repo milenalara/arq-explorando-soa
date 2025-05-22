@@ -47,6 +47,8 @@ Informa o cliente sobre a conclusão da compra. Reutilizável em diversas opera�
 | Interface             | Interface de processo – fluxos BPMN, regras de negócio, integração com app/web.       |
 | Autonomia Técnica     | Baixa – depende da orquestração de múltiplos serviços autônomos.                      |
 
+![Serviço de Investimento em Títulos com Juros Pré-Fixados](image-1.png)
+
 
 ## 2. Processo de Investimento em Títulos com Juros Pós-Fixados
 
@@ -93,6 +95,8 @@ Informa o sucesso da operação. Reutilizável. Integra com múltiplos canais.
 | Interface             | Interface de processo – modelagem BPMN, consumo por canais digitais.                  |
 | Autonomia Técnica     | Baixa – o processo depende da composição de serviços autônomos, como cálculo pós-fixado. |
 
+![Serviço de Investimento em Títulos com Juros Pós-Fixados](image-2.png)
+
 
 ## 3. Processo de Saque de Dinheiro
 
@@ -131,7 +135,7 @@ Permitir que o cliente realize o saque de valores de sua conta para dinheiro fí
 - Sistema de registro de operações financeiras
 - Sistema de notificações
 
-### 3.5 Explicação
+### 3.5. Explicação
 
 | **Critério**       | **Aplicação no Processo de Saque**                                                                 |
 |--------------------|---------------------------------------------------------------------------------------------------|
