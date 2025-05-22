@@ -216,11 +216,13 @@ Sistema de assinatura eletrônica
 Sistema de notificações
 
 ### 4.5. Explicação
-Critério	Aplicação no Processo de Solicitação de Empréstimo
-Escopo	Macroscópico – envolve várias etapas (consulta, validação, análise, formalização, liberação).
-Granularidade	Alta – processo completo, desde simulação até a liberação dos valores.
-Reutilização	Baixa no processo como um todo, mas alta nos serviços técnicos (análise de crédito, notificações).
-Composição	Composto por tarefas técnicas (consulta, análise, contrato, crédito) e decisões de negócio.
-Tecnologia	Independente – modelagem BPMN, APIs (REST/SOAP), integração com parceiros e sistemas externos.
-Interface	Interface de processo – consumido por app, web e APIs de parceiros financeiros.
-Autonomia Técnica	Baixa – exige composição de múltiplos serviços autônomos.
+| **Critério**          | **Aplicação no Processo de Solicitação de Empréstimo**                                             |
+| --------------------- | -------------------------------------------------------------------------------------------------- |
+| **Escopo**            | Macroscópico – envolve várias etapas (consulta, validação, análise, formalização, liberação).      |
+| **Granularidade**     | Alta – processo completo, desde simulação até a liberação dos valores.                             |
+| **Reutilização**      | Baixa no processo como um todo, mas alta nos serviços técnicos (análise de crédito, notificações). |
+| **Composição**        | Composto por tarefas técnicas (consulta, análise, contrato, crédito) e decisões de negócio.        |
+| **Tecnologia**        | Independente – modelagem BPMN, APIs (REST/SOAP), integração com parceiros e sistemas externos.     |
+| **Interface**         | Interface de processo – consumido por app, web e APIs de parceiros financeiros.                    |
+| **Autonomia Técnica** | Baixa – exige composição de múltiplos serviços autônomos.                                          |
+
