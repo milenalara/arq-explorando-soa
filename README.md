@@ -128,4 +128,5 @@ Permitir que o cliente realize o saque de valores de sua conta para dinheiro fí
 | **Interface**      | Pode ser modelado em BPMN, consumido via app, APIs externas (ex: fintechs, caixas eletrônicos).     |
 | **Autonomia Técnica** | Baixa – depende da orquestração de múltiplos serviços para sua execução.                        |
 
+![alt text](image.png)
 ---
