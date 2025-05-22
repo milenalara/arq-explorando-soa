@@ -226,3 +226,75 @@ Sistema de notificações
 | **Interface**         | Interface de processo – consumido por app, web e APIs de parceiros financeiros.                    |
 | **Autonomia Técnica** | Baixa – exige composição de múltiplos serviços autônomos.                                          |
 
+
+
+## 5. Processo de Controle de Saldo
+### 5.1. Objetivo
+Consultar e atualizar o saldo da conta do cliente em tempo real, garantindo segurança.
+
+### 5.2. Quem consome
+App mobile
+
+Plataforma web
+
+Módulo de extrato 
+
+APIs de parceiros (ex: marketplaces financeiros)
+
+Serviço de saque
+
+Serviço de investimento
+
+
+### 5.3. Serviços utilizados e justificativas
+#### 5.3.1. Autenticação de Cliente
+Justificativa: Garante que apenas o cliente autorizado consiga visualizar informações financeiras sensíveis, prevenindo fraudes e acessos não autorizados.
+
+Características: Serviço reutilizável e autônomo, executado via API. É utilizado também em processos como investimentos, saques, transferências e pagamentos. Granularidade baixa, focado exclusivamente na validação da identidade do cliente.
+
+#### 5.3.2. Validação de Permissões
+Justificativa: Verifica se o cliente possui as permissões adequadas para consultar ou modificar saldo (ex: titularidade da conta, bloqueios judiciais).
+
+
+Características: Serviço técnico, com escopo pontual e decisão baseada em regras de negócio. Reutilizável em processos como autorização de transferências ou investimentos.
+
+#### 5.3.3. Recuperação de Dados de Saldo:
+Justificativa: Consulta diretamente o banco de dados transacional para obter o saldo atualizado da conta, incluindo saldo disponível, bloqueado e limites. Pode acessar também o sistema de bloqueios ou reservas, se necessário.
+
+
+Características: Serviço central e essencial, com alta disponibilidade e foco em leitura rápida e consistente. Reutilizado por diversos processos, como saque, pagamento, investimentos, transferências e geração de extrato. Executável via API.
+
+#### 5.3.4 Formatação e Resposta de Dados:
+Justificativa: Padroniza a resposta ao cliente, organizando as informações de saldo de maneira clara e consistente, adequada para diferentes canais (app mobile, web, APIs de parceiros).
+
+
+Características: Serviço técnico e altamente reutilizável em diversos pontos de exibição e relatórios que encapsula regras de apresentação, como máscaras de valores, arredondamentos e identificação de saldos bloqueados ou pendentes.
+
+#### 5.3.5 Notificações:
+Justificativa: Informa o cliente sempre que há alterações relevantes no saldo, como após um saque ou pagamento.
+
+Características:Reutilizável em diversas operações financeiras. Pode ser disparado por push notification, e-mail ou SMS.
+
+### 5.4 Dados ou sistemas acessados
+Banco de dados transacional (saldo, limites, histórico)
+
+Sistema de bloqueios e reservas financeiras
+
+Sistema de autenticação
+
+Sistema de perfil e permissões do cliente
+
+Sistema de notificações
+
+### 5.5 Explicação
+| **Critério**         | **Aplicação no Processo de Controle de Saldo** |
+|----------------------|-------------------------------------------------|
+| **Escopo**           | Macroscópico – envolve autenticação, validação, consulta e atualização de dados. |
+| **Granularidade**    | Alta – processo completo com múltiplas etapas e decisões de negócio. |
+| **Reutilização**     | Baixa no processo como um todo, mas alta nos serviços técnicos (autenticação, atualização, notificações). |
+| **Composição**       | Composto por tarefas técnicas (consulta, atualização, notificação) e decisões de negócio (validação de permissões). |
+| **Tecnologia**       | Independente – pode ser descrito via BPMN, REST, SOAP ou gRPC. |
+| **Interface**        | Interface de processo – fluxos BPMN, integração com app, web e APIs de parceiros. |
+| **Autonomia Técnica**| Baixa – depende da orquestração de múltiplos serviços autônomos. |
+
+
